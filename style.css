@@ -1,7 +1,7 @@
-body { background-color: #d9e0d3; }
+.body { background-color: #d9e0d3; }
 
-h1 { color: rgb(8, 23, 0);
+.h1 { color: rgb(8, 23, 0);
 font-family: arial;
 font-size: 30pt;}
-h2 { color: rgb(26, 46, 0); }
-p{ font-size: 20px; }
+.h2 { color: rgb(26, 46, 0); }
+.p{ font-size: 20px; }
