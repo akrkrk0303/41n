@@ -1,4 +1,211 @@
-.momoko{
-    color:aquamarine;
-    font-size: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+
+/* ヘッダー全体のスタイル */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #001f3d ; /* グラデーション背景 */
+    padding: 15px 30px;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+h1{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: xx-large;
+    color:#001f3d ;
+}
+h2{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: x-large;
+    color:#001f3d ;
+}
+h3{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: large;
+    color:#001f3d ;
+}
+h4{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: medium;
+    color:#001f3d ;
+}
+p{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    color:#001f3d ;
+}
+
+
+/* 左側のロゴとメニュー */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+/* テキストロゴのスタイル */
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+/* ナビゲーションメニュー */
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+/* ホバーしたときに下線を表示 */
+.nav-menu a:hover {
+    text-decoration: underline;
+}
+
+/* 右側のボタン */
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* 問い合わせボタン */
+.contact-btn, .download-btn {
+    background-color: transparent;
+    color: white;
+    padding: 8px 16px;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ボタンにホバー時のスタイル */
+.contact-btn:hover, .download-btn:hover {
+    background-color: white;
+    color: #788caf; /* ボタンのホバーカラー */
+}
+
+.download-btn::after {
+    content: " ▼"; /* ダウンロードボタンにドロップダウンアイコン */
+}
+
+.voiceease{
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.footer {
+    background-color: #000; /* 黒背景 */
+    color: white;           /* テキストは白 */
+    padding: 20px 0;        /* 上下に余白 */
+    text-align: center;     /* 中央揃え */
+    font-family: Arial, sans-serif;
+}
+
+/* フッターの内容 */
+.footer-content {
+    display: inline-block; /* 中央に配置 */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ロゴのスタイル */
+.footer-logo {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+/* 著作権表示のスタイル */
+.footer-copyright {
+    font-size: 16px;
+    font-weight: normal;
+    opacity: 0.8; /* 文字を少し薄く */
+}
+
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .review {
+    font-size: 32px;
+    color: #001f3d;
+    margin-bottom: 20px;
+  }
+  
+  .rating-container {
+    margin-bottom: 20px;
+  }
+  
+  .stars {
+    font-size: 40px;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .stars .star {
+    margin: 0 5px;
+  }
+  
+  .stars .star.selected {
+    color: goldenrod; /* 星が選択されたときの色 */
+  }
+  
+  textarea {
+    width: 100%;
+    height: 80px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    resize: none;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #001f3d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #001f3d;
+  }
+  
+  .reviews {
+    margin-top: 20px;
+  }
+  
+  .review-item {
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+  }
+  
+  .review-item .rating {
+    color: #;
+    font-size: 20px;
+  }

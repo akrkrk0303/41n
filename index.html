@@ -4,8 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>背景色の設定例</title>
+    <style>
+        body {
+            background-color: #fafafa; /* 背景色を指定 */
+        }
+    </style>
+  
 </head>
 <body>
-    <h1 class="momoko">aidamomoko</h1>
+    <div class="header">
+        <div class="header-left">
+            <div class="logo-text">VoiceEase</div> <!-- ロゴ画像 -->
+            <nav class="nav-menu">
+                <a href="#section1">使い方</a>
+                <a href="#section2">機能</a>
+                <a href="#section3">事例</a>
+                <a href="#section4">利用者の声</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <button class="contact-btn">お問い合わせ</button>
+            <button class="download-btn">資料ダウンロード</button>
+        </div>
+    </div>
+
+    <div class="voiceease">
+        <img src="voiceease.png" alt="" height=auto width=100%>
+    </div>
+
+    <div class="section1">
+        <section id="section1">
+            <h2>使い方</h2>
+            <p>ここには活用方法についての情報が入ります。</p>
+            <Marquee>
+                
+                <img src="1.png" alt="" width="400" length="600"><img src="3.png" alt="" width="400" length="600"><img src="4.png" alt="" width="400" length="600"><img src="5.png" alt="" width="400" length="600">
+            </Marquee>
+        </section>
+    </div>
+
+    <div class="section2">
+        <section id="section2" class="section2">
+            <h2>機能</h2>
+            <p>ここには機能についての情報が入ります。</p>
+        </section>
+    </div>
+
+    <div class="section3">
+        <section id="section3" class="section3">
+            <h2>事例</h2>
+            <p>ここには事例についての情報が入ります。</p>
+        </section>
+    </div>
+
+    <div class="section4">
+        <section id="section4" class="section4">
+            <div class="container">
+                <h1 class="review">星で評価しよう！</h1>
+            
+                <!-- レーティングエリア -->
+                <div class="rating-container">
+                  <div class="stars" id="star-rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                  </div>
+                  <textarea id="review-text" placeholder="あなたの口コミを書いてください"></textarea>
+                  <button id="submit-review">投稿する</button>
+                </div>
+            
+                <div class="reviews" id="reviews">
+                  <h2>口コミ一覧</h2>
+                </div>
+              </div>
+              <script>
+                // 星の評価を選択する機能
+                const stars = document.querySelectorAll(".star");
+                const reviewText = document.getElementById("review-text");
+                const submitBtn = document.getElementById("submit-review");
+                const reviewsContainer = document.getElementById("reviews");
+            
+                let selectedRating = 0;
+            
+                stars.forEach(star => {
+                  star.addEventListener("click", () => {
+                    selectedRating = parseInt(star.getAttribute("data-value"));
+                    stars.forEach(s => s.classList.remove("selected"));
+                    for (let i = 0; i < selectedRating; i++) {
+                      stars[i].classList.add("selected");
+                    }
+                  });
+                });
+            
+                // 口コミを追加する機能
+                submitBtn.addEventListener("click", () => {
+                  if (selectedRating === 0 || reviewText.value.trim() === "") {
+                    alert("星の評価と口コミを入力してください。");
+                    return;
+                  }
+            
+                  const reviewItem = document.createElement("div");
+                  reviewItem.className = "review-item";
+                  
+                  // レビュー内容を追加
+                  reviewItem.innerHTML = `
+                    <div class="rating">${"★".repeat(selectedRating)}</div>
+                    <p>${reviewText.value}</p>
+                  `;
+            
+                  // 口コミ一覧に追加
+                  reviewsContainer.appendChild(reviewItem);
+            
+                  // フォームをリセット
+                  reviewText.value = "";
+                  selectedRating = 0;
+                  stars.forEach(s => s.classList.remove("selected"));
+                });
+              </script>
+              
+        </section>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <span class="footer-logo">VoiceEase</span> 
+            <span class="footer-copyright">© 41ncluster, Inc.</span>
+        </div>
+    </div>
 </body>
 </html>
