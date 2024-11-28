@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+  /* ページ全体の高さを画面いっぱいに */
+  /* 余計なスクロールを防ぐ */
+  overflow-x: hidden;
+}
 
 /* ヘッダー全体のスタイル */
 .header {
@@ -270,7 +275,7 @@ p{
     overflow: hidden; /* コンテナ外の画像を隠す */
     position: relative;
     cursor: pointer; /* 視覚的にクリック可能に見える */
-  }
+}
 
   .slider {
     display: flex;
@@ -279,10 +284,10 @@ p{
     gap: 20px;
     animation: loop 10s linear infinite; 
     will-change: transform;
-  }
+}
 
   .slider img {
-    height: 700px;
+    height: 400px;
     margin-right: 10px; /* 画像間のスペース */
     object-fit: cover;
   }
@@ -302,8 +307,9 @@ p{
   }
 
   .use{
-    font-size: 100px;
+    font-size: 50px;
     margin-top: 200px;
+    text-align: center;
   }
 
 
@@ -326,3 +332,55 @@ p{
   #backToTop:hover {
     background-color: #0056b3;
   }
+
+  .gray-box {
+    width: 99%; /* 箱の幅（画面の80%） */
+    padding: 40px;
+    background-color: rgba(200, 200, 200, 0.3); /* 薄いグレー */
+    border-radius: 15px; /* 角を丸くする */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* 写真を均等に配置 */
+    gap: 20px; /* 写真の間隔 */
+    margin-left: 10px;
+}
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2列 */
+    grid-template-rows: repeat(2, 1fr); /* 2行 */
+    gap: 20px; /* 写真間の隙間 */
+    width: 70vw; /* 幅を画面の70%に設定 */
+    height: 70vh; /* 高さを画面の70%に設定 */
+}
+
+.photo {
+    background-size: cover; /* 画像を埋める */
+    background-position: center; /* 画像の中央を表示 */
+    border-radius: 15px; /* 角を丸くする */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+}
+
+.photo:hover {
+    transform: scale(1.1); /* ホバー時に拡大 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* ホバー時に影を追加 */
+}
+
+.point{
+  font-size: 50px;
+  margin-top: 200px;
+  text-align: center;
+}
+.reviewall-container {
+  width: 80%; /* 画像の幅を設定 */
+  height: 500px; /* 高さを設定 */
+  margin: 0 auto;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 1) 80%, rgba(255, 255, 255, 0)),
+              url('review.jpg'); /* 画像のURLを指定 */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
