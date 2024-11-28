@@ -19,7 +19,7 @@
             <div class="logo-text">VoiceEase</div> <!-- ロゴ画像 -->
             <nav class="nav-menu">
                 <a href="#section1">使い方</a>
-                <a href="#section2">機能</a>
+                <a href="#section2">ポイント</a>
                 <a href="#section3">事例</a>
                 <a href="#section4">利用者の声</a>
             </nav>
@@ -38,14 +38,14 @@
         <section id="section1">
             <h2 class="use">使い方</h2>
             <div class="slider">
-                <img src="1.png" alt="Photo 1">
-                <img src="3.png" alt="Photo 2">
-                <img src="4.png" alt="Photo 3">
-                <img src="5.png" alt="Photo 4">
-                <img src="1.png" alt="Photo 1">
-                <img src="3.png" alt="Photo 2">
-                <img src="4.png" alt="Photo 3">
-                <img src="5.png" alt="Photo 4">           
+                <img src="use1.png" alt="Photo 1">
+                <img src="use2.png" alt="Photo 2">
+                <img src="use3.png" alt="Photo 3">
+                <img src="use4.png" alt="Photo 4">
+                <img src="use1.png" alt="Photo 1">
+                <img src="use2.png" alt="Photo 2">
+                <img src="use3.png" alt="Photo 3">
+                <img src="use4.png" alt="Photo 4">          
             </div>
             <p>ここには活用方法についての情報が入ります。</p>
             <script>
@@ -74,7 +74,7 @@
 
     <div class="section2">
         <section id="section2" class="section2">
-            <h2>機能</h2>
+            <h2>ポイント</h2>
             <p>ここには機能についての情報が入ります。</p>
         </section>
     </div>
@@ -158,8 +158,32 @@
 
 
   <a href="file:///C:/Users/akira/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/41n/index2.html" class="floating-circle">
-    診断してみよう！！
+    診断してみる
   </a>
+
+  <button id="backToTop">↑ トップに戻る</button>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const backToTopButton = document.getElementById("backToTop");
+
+      // スクロール位置に応じてボタンの表示/非表示を切り替える
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopButton.style.display = "block";
+        } else {
+        backToTopButton.style.display = "none";
+        }
+      });
+
+      // ボタンがクリックされたらスムーズにトップにスクロール
+      backToTopButton.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    });
+  </script>
 
     <div class="footer">
         <div class="footer-content">
