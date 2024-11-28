@@ -36,12 +36,39 @@
 
     <div class="section1">
         <section id="section1">
-            <h2>使い方</h2>
+            <h2 class="use">使い方</h2>
+            <div class="slider">
+                <img src="1.png" alt="Photo 1">
+                <img src="3.png" alt="Photo 2">
+                <img src="4.png" alt="Photo 3">
+                <img src="5.png" alt="Photo 4">
+                <img src="1.png" alt="Photo 1">
+                <img src="3.png" alt="Photo 2">
+                <img src="4.png" alt="Photo 3">
+                <img src="5.png" alt="Photo 4">           
+            </div>
             <p>ここには活用方法についての情報が入ります。</p>
-            <Marquee>
-                
-                <img src="1.png" alt="" width="400" length="600"><img src="3.png" alt="" width="400" length="600"><img src="4.png" alt="" width="400" length="600"><img src="5.png" alt="" width="400" length="600">
-            </Marquee>
+            <script>
+                const slider = document.querySelector('.slider');
+                const container = document.querySelector('.slider-container');
+            
+                // スライダーの幅を計算
+                const sliderWidth = slider.scrollWidth;
+                const containerWidth = container.clientWidth;
+            
+                // マウス移動イベントで画像を動かす
+                container.addEventListener('mousemove', (e) => {
+                  const mouseX = e.clientX; // マウスのx座標
+                  const containerRect = container.getBoundingClientRect();
+                  const relativeX = mouseX - containerRect.left; // コンテナ内のマウス位置
+            
+                  // マウス位置に応じたスライダーの移動
+                  const maxScroll = sliderWidth - containerWidth; // スライダーが動ける最大距離
+                  const scrollX = (relativeX / containerWidth) * maxScroll;
+            
+                  slider.style.transform = `translateX(${-scrollX}px)`;
+                });
+            </script>
         </section>
     </div>
 
@@ -62,7 +89,7 @@
     <div class="section4">
         <section id="section4" class="section4">
             <div class="container">
-                <h1 class="review">星で評価しよう！</h1>
+                <h1 class="review">レビュー</h1>
             
                 <!-- レーティングエリア -->
                 <div class="rating-container">
@@ -128,6 +155,11 @@
               
         </section>
     </div>
+
+
+  <a href="file:///C:/Users/akira/OneDrive/%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88/41n/index2.html" class="floating-circle">
+    診断してみよう！！
+  </a>
 
     <div class="footer">
         <div class="footer-content">

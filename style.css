@@ -137,8 +137,9 @@ p{
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 600px;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
   }
   
   .review {
@@ -206,6 +207,100 @@ p{
   }
   
   .review-item .rating {
-    color: #;
+    color:#afafaf;
     font-size: 20px;
+  }
+
+  .floating-circle {
+    position: fixed;
+    bottom: 20px; /* 下からの距離 */
+    right: 20px; /* 右からの距離 */
+    width: 150px;
+    height: 150px;
+    background-color: #006D75; /* 色 */
+    color: white;
+    border-radius: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+    z-index: 1000;
+    animation: bounce 1.5s infinite ease-in-out;
+  }
+
+  .floating-circle:hover {
+    background-color: #005960;
+    cursor: pointer;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: scale(1); /* 元のサイズ */
+    }
+    50% {
+      transform: scale(1.1); /* 拡大 */
+    }
+  }
+
+
+  .header-center {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    
+}
+
+
+
+/* テキストロゴのスタイル */
+ .logo-text2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    text-align: center;
+}
+
+
+.slider-container {
+    width: 100%;
+    height: 700px;
+    overflow: hidden; /* コンテナ外の画像を隠す */
+    position: relative;
+    cursor: pointer; /* 視覚的にクリック可能に見える */
+  }
+
+  .slider {
+    display: flex;
+    height: 700px;
+    transition: transform 0.1s ease-out;
+    gap: 20px;
+    animation: loop 10s linear infinite; 
+    will-change: transform;
+  }
+
+  .slider img {
+    height: 700px;
+    margin-right: 10px; /* 画像間のスペース */
+    object-fit: cover;
+  }
+
+  @keyframes loop {
+    0% {
+      transform: translateX(0); /* 最初の位置 */
+    }
+    100% {
+      transform: translateX(calc(-320px * 4)); /* 4枚分左にスライド */
+    }
+  }
+
+  /* ループを滑らかにするため、写真を複製 */
+  .slider {
+    width: calc(320px * 8); /* 写真数×幅 */
+  }
+
+  .use{
+    font-size: 100px;
   }
